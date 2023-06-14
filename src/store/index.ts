@@ -3,7 +3,7 @@ import counterReducer from './slice/counterSlice';
 
 const store = configureStore({
     reducer: {
-        counter:counterReducer,
+        counter: counterReducer,
     },
     devTools: process.env.NODE_ENV !== 'production',
 });

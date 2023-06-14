@@ -1,23 +1,14 @@
 'use client';
 
-import { User } from '../types';
+import { getUsers } from '@/api/getUsers';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import React from 'react';
 
-async function getUsers() {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users = (await res.json()) as User[];
-    return users;
-}
-
 export default function ListUsers() {
     const [count, setCount] = React.useState(0);
 
-    const { data, isLoading, isFetching, error } = useQuery({
-        queryKey: ['hydrate-users'],
-        queryFn: () => getUsers(),
-    });
+    const { data, isLoading, isFetching, error } = useQuery(['hydrate-users'], getUsers);
 
     return (
         <main style={{ maxWidth: 1200, marginInline: 'auto', padding: 20 }}>

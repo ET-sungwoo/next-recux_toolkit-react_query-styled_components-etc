@@ -13,20 +13,26 @@ export const { reducer: counterReducer, actions } = createSlice({
     initialState,
     reducers: {
         reset: () => initialState,
-        increment: (state) => {
+        setIncrementValue: (state) => {
             state.value += 1;
         },
-        decrement: (state) => {
+        setDecrementValue: (state) => {
             state.value -= 1;
         },
-        incrementByAmount: (state, action: PayloadAction<number>) => {
+        setIncrementValueByAmount: (state, action: PayloadAction<number>) => {
             state.value += action.payload;
         },
-        decrementByAmount: (state, action: PayloadAction<number>) => {
+        setDecrementValueByAmount: (state, action: PayloadAction<number>) => {
             state.value -= action.payload;
         },
     },
 });
 
-export const { increment, incrementByAmount, decrement, decrementByAmount, reset } = actions;
+export const {
+    reset,
+    setIncrementValue,
+    setDecrementValue,
+    setIncrementValueByAmount,
+    setDecrementValueByAmount,
+} = actions;
 export default counterReducer;
