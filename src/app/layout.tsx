@@ -1,8 +1,7 @@
 import TanStackProviders from '@/lib/react-query/QueryProvider';
-import './globals.css';
 import StyledComponentsRegistry from '@/lib/styled-components/registry';
 import { ReduxProviders } from '@/lib/redux/ReduxProvider';
-import Link from 'next/link';
+import '@/styles/globals.scss';
 
 export const metadata = {
     title: 'Create Next App',
@@ -15,18 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body>
                 <ReduxProviders>
                     <TanStackProviders>
-                        <StyledComponentsRegistry>
-                            <h3>
-                                <Link href="/">Home</Link>
-                            </h3>
-                            <h3>
-                                <Link href="/initial-data">Prefetching Using initial data</Link>
-                            </h3>
-                            <h3>
-                                <Link href="/hydration">Prefetching Using Hydration</Link>
-                            </h3>
-                            {children}
-                        </StyledComponentsRegistry>
+                        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
                     </TanStackProviders>
                 </ReduxProviders>
             </body>

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
+    "devt": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,8 +22,11 @@
     "next": "13.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icon": "^1.0.0",
+    "react-icons": "^4.9.0",
     "react-redux": "^8.0.7",
     "redux": "^4.2.1",
+    "sass": "^1.63.4",
     "styled-components": "^6.0.0-rc.3",
     "typescript": "5.1.3"
   }
